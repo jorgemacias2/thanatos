@@ -1,2 +1,25 @@
 @import "~bootstrap/scss/bootstrap";
 @import 'assets/styles/reset';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.full-navbar{
+    background-color: #212121;
+    font-family: 'Poppins', sans-serif;
+}
+
+.home-navbar{
+    background-color: #212121;
+    font-family: 'Poppins', sans-serif;
+}
+
+.full-navbar{
+    background-color: #212121;
+}
+
+.nav-link{
+    background-color: #212121;
+}
+
+.mr-auto{
+    background-color: #212121;
+}
