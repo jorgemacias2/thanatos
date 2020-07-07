@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBModalFooter } from 'mdbreact';
 
 
