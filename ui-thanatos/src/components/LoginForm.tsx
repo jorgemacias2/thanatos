@@ -1,8 +1,15 @@
-import React from "react"
+import React, { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
-function LoginForm () {
-    return(
+function LoginForm() {
+    const [show, setShow] = useState(true);
+  
+    const handleClose = () => setShow(false);
+  
+    return (
+      <>
+        <Modal show={show} onHide={handleClose}>
         <MDBContainer>
         <MDBRow>
             <MDBCol md="6">
@@ -20,7 +27,9 @@ function LoginForm () {
             </MDBCol>
         </MDBRow>
         </MDBContainer>
+        </Modal>
+      </>
     );
-}
-
-export default LoginForm
+  }
+  
+export default LoginForm;

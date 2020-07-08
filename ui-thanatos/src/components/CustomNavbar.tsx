@@ -9,7 +9,7 @@ function CustomNavbar() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="full-navbar" id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link className="nav-link" href="/">Home</Nav.Link>
+            <Nav.Link className="nav-link" href="/modal">Home</Nav.Link>
             <NavDropdown title="User" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Your Account</NavDropdown.Item>

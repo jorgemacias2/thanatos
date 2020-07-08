@@ -6,8 +6,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import CustomNavbar from './components/CustomNavbar';
-import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
 
 
 function App() {

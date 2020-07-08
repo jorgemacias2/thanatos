@@ -1,9 +1,15 @@
-import React from "react"
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBModalFooter } from 'mdbreact';
+import React, { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
-
-function SignupForm () {
+function SignupForm() {
+    const [show, setShow] = useState(true);
+  
+    const handleClose = () => setShow(false);
+  
     return (
+      <>
+        <Modal show={show} onHide={handleClose}>
         <MDBContainer>
         <MDBRow>
             <MDBCol md="6">
@@ -25,7 +31,10 @@ function SignupForm () {
             </MDBCol>
         </MDBRow>
         </MDBContainer>
+        </Modal>
+      </>
     );
-};
-
-export default SignupForm;
+  }
+  
+export default SignupForm
+;
