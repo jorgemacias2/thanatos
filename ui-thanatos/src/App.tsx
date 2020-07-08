@@ -7,7 +7,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import CustomNavbar from './components/CustomNavbar';
 import SignupForm from './components/SignupForm';
-import LoginForm from './components/LoginForm';
+import SigninForm from './components/SigninForm';
 
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
     <>
     <CustomNavbar></CustomNavbar>
     <Switch>
-      <Route exact path='/login'>
-        <LoginForm />
+      <Route exact path='/signin'>
+        <SigninForm />
       </Route>
       <Route exact path='/signup'>
         <SignupForm />

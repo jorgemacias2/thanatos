@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
-function LoginForm() {
+function SigninForm() {
     const [show, setShow] = useState(true);
   
     const handleClose = () => setShow(false);
@@ -83,4 +83,4 @@ function LoginForm() {
     );
   }
   
-export default LoginForm;
+export default SigninForm;
