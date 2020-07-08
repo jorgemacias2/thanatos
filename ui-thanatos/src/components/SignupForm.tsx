@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import { Modal } from 'react-bootstrap';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 function SignupForm() {
     const [show, setShow] = useState(true);
@@ -12,9 +12,14 @@ function SignupForm() {
         <Modal show={show} onHide={handleClose}>
         <MDBContainer>
         <MDBRow>
-            <MDBCol md="6">
-            <form>
-                <p className="h4 text-left mb-4">Sign up</p>
+            <MDBCol md="12">
+            <MDBCard>
+              <MDBCardBody className="mx-4">
+                <div className="text-center">
+                  <h3 className="dark-grey-text mb-5">
+                    <strong>Sign Up</strong>
+                  </h3>
+                </div>
                 <div className="grey-text">
                 <MDBInput label="Your name" icon="user" group type="text" validate error="wrong"
                     success="right" />
@@ -27,7 +32,8 @@ function SignupForm() {
                 <div className="text-center">
                 <MDBBtn color="primary">Register</MDBBtn>
                 </div>
-            </form>
+                </MDBCardBody>
+            </MDBCard>
             </MDBCol>
         </MDBRow>
         </MDBContainer>
