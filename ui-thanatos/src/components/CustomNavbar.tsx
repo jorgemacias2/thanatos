@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
 
 function CustomNavbar() {
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+
   return (
     <div className="full-navbar">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -19,11 +24,13 @@ function CustomNavbar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="/signin">Sign In</Nav.Link>
-            <Nav.Link href="/signup">Sign Up</Nav.Link>
+            <Nav.Link href="#" onClick={() => setShowLogin(true)}>Sign In</Nav.Link>
+            <Nav.Link href="#" onClick={() => setShowSignup(true)}>Sign Up</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <LoginForm show={showLogin} onHideModal={() => setShowLogin(false)} />
+      <SignupForm show={showSignup} onHideModal={() => setShowSignup(false)} />
     </div>
   );
 }

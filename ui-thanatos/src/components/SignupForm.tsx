@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal } from 'react-bootstrap';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
-function SignupForm() {
-    const [show, setShow] = useState(true);
-  
-    const handleClose = () => setShow(false);
+function SignupForm({show, onHideModal}) {
+    const handleClose = () => onHideModal(false);
   
     return (
       <>
