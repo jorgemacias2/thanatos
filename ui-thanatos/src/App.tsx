@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 import './App.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
