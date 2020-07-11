@@ -2,24 +2,18 @@
 @import 'assets/styles/reset';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-.full-navbar{
-    background-color: #212121;
+.home-navbar, .full-navbar{
     font-family: 'Poppins', sans-serif;
 }
 
-.home-navbar{
-    background-color: #212121;
-    font-family: 'Poppins', sans-serif;
-}
-
-.full-navbar{
+.mr-auto, .nav-link, .full-navbar, .home-navbar {
     background-color: #212121;
 }
 
-.nav-link{
-    background-color: #212121;
+.padding-card {
+    padding: 20px 5px;
 }
 
-.mr-auto{
-    background-color: #212121;
+.btn-default {
+    background-color: white;
 }
