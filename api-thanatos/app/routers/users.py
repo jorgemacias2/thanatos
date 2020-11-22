@@ -8,16 +8,6 @@ from .. import crud, schemas, database
 router = APIRouter()
 
 
-@router.get("/demo")
-async def read_users():
-    return [{"name": "User Foo"}, {"name": "user Bar"}]
-
-
-@router.get("/demo/{user_id}")
-async def read_user(user_id: str):
-    return {"name": "Fake Specific User", "user_id": user_id}
-
-
 @router.post("/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(database.get_db)):
     db_user = crud.get_user_by_email(db, email=user.email)
@@ -31,14 +21,16 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(database.g
     users = crud.get_users(db, skip=skip, limit=limit)
     return users
 
+#@router.delete
 
 @router.put(
     "/{user_id}",
     tags=["custom"],
     responses={403: {"description": "Operation forbidden"}},
 )
-
 async def update_user(user_id: str):
     if user_id != "foo":
         raise HTTPException(status_code=403, detail="You can only update the user: foo")
     return {"user_id": user_id, "name": "The Fighters"}
+
+
