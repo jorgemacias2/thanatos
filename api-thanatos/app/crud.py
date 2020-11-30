@@ -22,3 +22,28 @@ def create_user(db: Session, user: schemas.UserCreate):
     db.commit()
     db.refresh(db_user)
     return db_user
+
+def delete_user(db: Session, user_id: int):
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    db.delete(user)
+    db.commit()
+    return
+
+def update_user(db :Session, user_id: int, user: schemas.UserUpdate):
+    db_user = db.query(models.User).filter(models.User.id == user_id).first()
+    db_user.email = user.email
+    db_user.password = user.password
+    db_user.is_active = user.is_active
+    db.commit()
+    return db_user
+
+def find_user(db :Session, user_id: int):
+    db_user = db.query(models.User).filter(models.User.id == user_id).first()
+    return db_user
+
+def find_by_email(db :Session, user_email: str):
+    db_user = db.query(models.User).filter(models.User.email == user_email).first()
+    return db_user
+
+def get_active_users(db: Session):
+    return db.query(models.User).filter(models.User.is_active == True).all()

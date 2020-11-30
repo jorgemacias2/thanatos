@@ -23,7 +23,6 @@ app.include_router(
     responses={404: {"description": "Not found"}},
 )
 
-
 @app.get("/")
 def read_root(settings: config.Settings = Depends(get_settings)):
     return {"Hello": settings.app_name}

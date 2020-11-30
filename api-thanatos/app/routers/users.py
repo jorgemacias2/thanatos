@@ -21,16 +21,29 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(database.g
     users = crud.get_users(db, skip=skip, limit=limit)
     return users
 
-#@router.delete
+@router.delete("/{user_id}")
+def delete_users(user_id: str, db: Session = Depends(database.get_db)):
+    crud.delete_user(db, user_id)
+    return user_id + " has been deleted"
 
 @router.put(
     "/{user_id}",
-    tags=["custom"],
-    responses={403: {"description": "Operation forbidden"}},
+    response_model=schemas.User,
 )
-async def update_user(user_id: str):
-    if user_id != "foo":
-        raise HTTPException(status_code=403, detail="You can only update the user: foo")
-    return {"user_id": user_id, "name": "The Fighters"}
+def update_user(user_id: str, user: schemas.UserUpdate, db: Session = Depends(database.get_db)):
+    return crud.update_user(db, user_id, user)
+
+@router.get("/{user_id}", response_model=schemas.User)
+def find_user(user_id: str, db: Session = Depends(database.get_db)):
+    return crud.find_user(db, user_id)
+
+@router.get("/email/{user_email}", response_model=schemas.User)
+def find_by_email(user_email: str, db: Session = Depends(database.get_db)):
+    return crud.find_by_email(db, user_email)
+
+@router.get("/user/active", response_model=List[schemas.User])
+def get_active_users(db: Session = Depends(database.get_db)):
+    return crud.get_active_users(db)
+
 
 
